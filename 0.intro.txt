@@ -1,0 +1,59 @@
+=> Strongly typed language: 
+In strongly typed languages, every variable has a specific data type assigned to it.
+Examples of strongly typed languages include Java, C++, C#, Rust, and Swift.
+
+=> Loosely Typed Languages:
+In loosely typed languages, also known as dynamically typed languages, variables can hold values of different types, 
+and the language automatically handles type conversions as needed.
+Examples of loosely typed languages include JavaScript, Python, Ruby, PHP, and Perl.
+
+People realised that JavaScript is a very powerful language, but lacks types.
+TypeScript was introduced as a new language to add types on top of JS.
+
+What is TypeScript?
+TypeScript is a strongly typed programming language developed by microsoft.
+It provides types to variables in JS.
+TypeScript is a Superset of JavaScript: 
+TypeScript is a typed superset of JavaScript, which means that all valid JavaScript code is also valid TypeScript code. 
+TypeScript adds optional static typing and other features on top of JavaScript.
+
+How does TypeScript code run?
+TypeScript code never runs on browser. Your browser understands JS only.
+1. JS is a runtime language.
+2. TS is something that transpiles down to JS.
+3. When TS is converted to JS, you get type checking. If there is an error, the conversion to JS fails.
+    main.ts --> tsc --> main.js --> browser.
+So, in summary, TypeScript code itself never runs directly in the browser or any other runtime environment. 
+It is first transpiled (converted) into plain JavaScript code, and this generated JavaScript code is what ultimately gets executed.
+
+What is transpilation? 
+Transpilation, also known as source-to-source translation, refers to the process of converting source code from one programming 
+language to another programming language that has a similar level of abstraction. 
+
+TypeScript compiler tsc:
+tsc is the official TS compiler that you can use to convert TS code to JS.
+
+install TS => npm i typescript
+
+Setting up node with TS => npm init -y
+                           npm tsc --init  
+we will get a package.json and tsconfig.json files.
+tsconfig.json is a configuration file used by the TypeScript compiler (tsc) to manage the compilation process of TypeScript code. 
+It specifies various options and settings that affect how TypeScript files are transpiled into JavaScript.
+
+
+npm vs npx => node package manager and node package executable
+using npx we can use the modules without installing them locally.
+
+Structure of .ts files in Node app:
+1. create a 'src' folder
+2. In this src folder write all the TS code.
+3. create a 'dist' or 'build' to store .js files.
+4. Goto tsconfig.json and:
+   a. de-comment 'rootDir' to 'rootDir: "./src" '
+   b. de-comment 'outDir' to 'outDir: "./dist" '  => never push this dist folder to github
+
+To transpile this code enter "tsc -b" in the terminal and a .js file will be created
+To run the code we need to run that .js file => node dist/a.js
+
+https://projects.100xdevs.com/tracks/6SbPPXGkG8QKFOTW9BmL/ts-1
