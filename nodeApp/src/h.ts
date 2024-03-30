@@ -38,3 +38,15 @@ finally what is the difference between interfaces and types?
 1. interface can be implemented types can't be implemented
 2. we can't perform union and intersection with interfaces
 */
+
+// Exclude: used when we want to exclude some of the types from a given type.
+
+type EventType = 'click' | 'scroll' | 'mousemove';
+type ExcludeEvent = Exclude<EventType, 'scroll'>; // 'click' | 'mousemove'
+
+const handleEvent = (event: ExcludeEvent) => {
+  console.log(`Handling event: ${event}`);
+};
+
+handleEvent('click'); // OK
+// handleEvent('scroll'); // Argument of type '"scroll"' is not assignable to parameter of type 'ExcludeEvent'.
